@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Nelson Rainey.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -173,13 +173,25 @@ def practice_problem3a(circles):
       :type sequence: [rg.Circle]
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+    plan = []
+    total = 1
+    for k in range(len(circles)):
+        C = circles[k]
+        plan = plan + [C.center.x]
+    for k in range (len(plan)):
+        total = total * plan[k]
+    return total
+
+
+
+
 
 
 def run_test_practice_problem3b():
@@ -342,7 +354,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DOne: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -354,6 +366,13 @@ def practice_problem3b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
+    jim = sequence[len(sequence)-1]
+    for k in range(len(sequence)-1):
+        if jim == sequence[k]:
+            return True
+    return False
+
+
 
 
 def run_test_practice_problem3c():
@@ -470,13 +489,19 @@ def practice_problem3c(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
+    plan = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            plan = plan + [k]
+    return plan
+
 
 
 def run_test_practice_problem3d():
@@ -593,16 +618,21 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ###########################################################################
+    plan = []
+    for k in range(len(sequence)):
+        if sequence[k] ==0:
+            return k
+    return (-1)
 
     ###########################################################################
-    # TODO: 6. Just ABOVE this _TODO_, you should have implemented
+    # DOne: 6. Just ABOVE this _TODO_, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -744,13 +774,20 @@ def practice_problem3e(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
+    total = 0
+    for k in range(len(sequence)):
+        if k % 2 ==0:
+            total = total +sequence[k]
+    return total
+
+
 
 
 ###############################################################################
